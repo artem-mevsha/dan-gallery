@@ -1,0 +1,19 @@
+!!! 5
+-# <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+-# <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+-# <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+-# <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+%html
+  %head>
+    %title Dan Gallery
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    -# /[if (lt IE 9) & (!IEMobile)]
+      -# %script{src: "/html5shim.googlecode.com/svn/trunk/html5.js"}
+  %body.loading
+    #preloader
+
+    #main
+      .wrapper
+        = yield

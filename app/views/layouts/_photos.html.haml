@@ -1,0 +1,6 @@
+%main#content
+  - if !photos.empty?
+    .photo-container.clearfix
+      - photos.each do |photo|
+        .photo-item
+          = link_to image_tag(photo.image_url(:preview)), photo.image_url, title: photo.title

@@ -1,0 +1,447 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster|Open+Sans:400italic,700italic,400,700,300&subset=latin,cyrillic-ext);
+
+@import "normalize";
+
+$main-bg      : #D3D3D3;
+$wrapper-bg   : #fff;
+$font-color   : #000000;
+$selection-bg : #323232;
+$link-color   : #C7C5D0;
+$link-visited : #150E5C;
+$link-hover   : #828282;
+
+$nav-link        : #232323;
+$nav-link-hover  : #d3d3d3;
+$nav-link-active : #af9f66;
+
+$soc-icon-bg       : #000;
+$soc-icon-bg-hover : #AF9F66;
+
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+* {
+    -moz-box-sizing: border-box;
+    box-sizing:      border-box;
+}
+
+html {
+    color: $font-color;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: $selection-bg;
+    text-shadow: none;
+    color: #fff;
+}
+
+::selection {
+    background: $selection-bg;
+    text-shadow: none;
+    color: #fff;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+    &:hover {
+        color: $link-hover;
+        text-decoration: underline;
+    }
+    &:active {
+        color: $link-visited;
+    }
+}
+
+a:focus, button:focus {
+    outline: none;
+}
+
+/* ==|== Author's custom styles ===============================================
+     ========================================================================== */
+
+body {
+    color: $font-color;
+    font-size: 14px;
+    font-family: 'Open Sans';
+}
+
+#main {
+    padding: 30px 30px 10px;
+    background: $main-bg;
+}
+
+.wrapper {
+    background: $wrapper-bg;
+}
+
+.container {
+    padding: 30px 30px 0;
+}
+
+.jspHorizontalBar {
+    height: 12px;
+}
+
+.jspDrag {
+    opacity: 0.3;
+    background: $nav-link;
+}
+
+.jspHorizontalBar,
+.jspTrack {
+    background: none;
+}
+
+.loading {
+    overflow: hidden;
+    height: 100%;
+}
+
+#main {
+    display: block;
+}
+
+#preloader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(preloader.gif) center center no-repeat, #fff;
+    z-index: 1000;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+#header {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.logo {
+    display: block;
+    float: left;
+}
+
+#menu {
+    margin: 0;
+    float: right;
+    list-style: none;
+    padding-left: 0;
+    li {
+        float: left;
+        margin: 0 15px;
+        a {
+            text-transform: uppercase;
+            display: block;
+            padding: 12px 5px;
+            color: $nav-link;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 1px;
+                right: -100%;
+                width: 100%;
+                height: 100%;
+                border-bottom: 2px solid $nav-link;
+                transition: all 0.5s linear;
+            }
+        }
+        &:hover {
+            a {
+                text-decoration:  none;
+                &:after {
+                    right: 0;
+                    transition: all 0.5s linear;
+                }
+            }
+        }
+    }
+    li.active {
+        a {
+            color: $nav-link-active;
+            &:after {
+                border-bottom-color: $nav-link-active;
+            }
+        }
+    }
+}
+
+
+.button-collapse {
+    display: none;
+    position: relative;
+    width: 2.5em;
+    height: 2.2em;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border: none;
+    background: none;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.25em;
+        width: 2.5em;
+        height: 0.5em;
+        background: black;
+        box-shadow: 0 0.7em 0 0 black, 0 1.4em 0 0 black;
+    }
+}
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+.photo-container {
+    overflow-x: auto;
+}
+
+.photo-item {
+    display: table-cell;
+    padding-right: 20px;
+    height: inherit;
+    &:first-child {
+        padding-left: 20px;
+    }
+    img {
+        width: initial;
+        height: 100%;
+        vertical-align: top;
+    }
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+#footer {
+    overflow: auto;
+}
+
+.soc-icons {
+    list-style: none;
+    padding-left: 0;
+    float: left;
+    li {
+        display: inline-block;
+        margin-right: 5px;
+        a {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            display: inline-block;
+            background: $soc-icon-bg;
+            color: #fff;
+            border-radius: 50%;
+            &:hover {
+                background: $soc-icon-bg-hover;
+            }
+        }
+    }
+}
+
+.copyright {
+    padding-top: 20px;
+    float: right;
+}
+
+.mfp-counter {
+    text-align: right;
+    width: 100%;
+}
+
+/*! END Site style*/
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 0;
+    }
+    #content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .button-collapse {
+        display: block;
+    }
+    #menu {
+        display: none;
+        clear: both;
+        float: none;
+        text-align: center;
+        li {
+            display: block;
+            float: none;
+        }
+    }
+    .photo-item {
+        display: block;
+        padding: 10px 0;
+        &:first-child {
+            padding-left: 0;
+        }
+        img {
+            width: 100%;
+            height: initial!important;
+        }
+    }
+    #footer {
+        padding-bottom: 20px;
+    }
+}
