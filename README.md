@@ -5,6 +5,7 @@ Web-site for demonstration photo galleries by Dan Boyarchuk. Simple managing fro
 ### Using technologies
 
 Frontend - HAML, SCSS, jquery, turbolinks, magnific-popup, jscrollpane
+
 Backend - ruby 2.2.1, rails 4.2.0, sqlite, active_admin, image magick, carrierwave
 
 ### Deploying
