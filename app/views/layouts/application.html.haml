@@ -5,12 +5,17 @@
 -# <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 %html
   %head>
-    %title Dan Gallery
+    %title
+      = full_title(yield(:title))
+    %meta{:name => "description", :content => meta_description(yield(:description)) }/
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}/
+    %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
     -# /[if (lt IE 9) & (!IEMobile)]
       -# %script{src: "/html5shim.googlecode.com/svn/trunk/html5.js"}
+    = csrf_meta_tags\
   %body.loading
     #preloader
 

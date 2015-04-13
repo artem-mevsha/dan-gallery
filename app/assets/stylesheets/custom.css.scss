@@ -88,11 +88,11 @@ body {
     color: $font-color;
     font-size: 14px;
     font-family: 'Open Sans';
+    background: $main-bg;
 }
 
 #main {
     padding: 30px 30px 10px;
-    background: $main-bg;
 }
 
 .wrapper {
@@ -411,6 +411,9 @@ body {
 
 @media (max-width: 767px) {
     body {
+        padding: 0;
+    }
+    #main {
         padding: 0;
     }
     #content {

@@ -23,6 +23,11 @@ var ready = function() {
       var footerHeight = $footer.height() + parseInt($footer.css('padding-top')) + parseInt($footer.css('padding-bottom'));
       var photoHeight = $(window).height() - headerHeight - footerHeight - bodyPadding;
       $photos.height(photoHeight);
+      if ($(window).width() > 768) {
+        $('.photo-container').height(photoHeight);
+      } else {
+        $('.photo-container').css('height', 'auto');
+      }
     }
   };
 
@@ -31,15 +36,11 @@ var ready = function() {
       autoReinitialise: true,
     });
     var api = scrollPane.data('jsp');
-    $('#main').bind(
-      'mousewheel',
-      function (event, delta, deltaX, deltaY)
-      {
+    $('#main').bind('mousewheel', function (event, delta, deltaX, deltaY) {
         api.scrollByX(delta*-100);
         return false;
       }
     );
-
   };
 
   var resizeScroll = function() {
