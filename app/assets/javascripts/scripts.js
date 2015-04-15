@@ -56,8 +56,10 @@ var ready = function() {
     api.destroy();
   };
 
-  resizePhoto();
-  initScroll();
+  if ($(window).width() > 768) {
+    resizePhoto();
+    initScroll();
+  }
 
   $(window).on('resize', function() {
     if ($(window).width() > 768) {
