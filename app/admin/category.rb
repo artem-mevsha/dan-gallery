@@ -14,4 +14,20 @@ ActiveAdmin.register Category do
   # end
   permit_params :title, :description
 
+  controller do
+
+    def update
+      update! do |format|
+        format.html { redirect_to collection_path } if resource.valid?
+      end
+    end
+
+    def create
+      create! do |format|
+        format.html { redirect_to collection_path } if resource.valid?
+      end
+    end
+
+  end
+
 end

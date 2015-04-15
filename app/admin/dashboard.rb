@@ -3,11 +3,18 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+
+    section "Recent Photos" do
+      table_for Photo.order("id desc").limit(5) do
+        column :title
+        column :description
+        column :published
+        column :category
+        column :image do |image|
+          image_tag image.image_url(:thumb)
+        end
       end
+        strong { link_to "View All Photos", admin_photos_path }
     end
 
     # Here is an example of a simple dashboard with columns and panels.
