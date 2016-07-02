@@ -18,3 +18,9 @@
 .env
 config/secrets.yml
 public/uploads
+
+/config/database.yml
+/Procfile
+/config/deploy/
+/shared/
+/public/system/
