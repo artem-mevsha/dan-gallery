@@ -232,5 +232,5 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
-  config.show_comments_in_menu = false
+  # config.show_comments_in_menu = false
 end

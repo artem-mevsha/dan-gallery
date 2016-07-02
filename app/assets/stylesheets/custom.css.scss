@@ -101,20 +101,6 @@ body {
     padding: 30px 30px 0;
 }
 
-.jspHorizontalBar {
-    height: 12px;
-}
-
-.jspDrag {
-    opacity: 0.3;
-    background: $nav-link;
-}
-
-.jspHorizontalBar,
-.jspTrack {
-    background: none;
-}
-
 .loading {
     overflow: hidden;
     height: 100%;
@@ -222,23 +208,45 @@ body {
    ========================================================================== */
 
 .photo-container {
-    overflow-x: auto;
 }
 
 .photo-item {
-    display: table-cell;
-    padding-right: 20px;
-    height: inherit;
-    &:first-child {
-        padding-left: 20px;
+    margin-right: 10px;
+    a {
+        display: block;
     }
     img {
-        width: initial;
-        height: 100%;
-        vertical-align: top;
+        width: auto;
+        max-width: 100%;
     }
 }
 
+.slick-dots {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 2px;
+    li {
+        display: table-cell;
+        height: 2px;
+        max-width: 50px;
+        list-style-type: none;
+        background: $main-bg;
+        transition: all 0.3s ease;
+        button {
+            background: none;
+            border: 0;
+            font-size: 0;
+            width: 100%;
+            height: 100%;
+        }
+        &.slick-active {
+            background: $wrapper-bg;
+            opacity: 1;
+        }
+    }
+}
 
 /* ==========================================================================
    Footer

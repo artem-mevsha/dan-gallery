@@ -12,9 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require jquery.mousewheel
-//= require jquery.jscrollpane
+//= require jquery.slick
 //= require magnific-popup
 //= require_directory .
 //= require scripts

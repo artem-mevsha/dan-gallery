@@ -6,7 +6,7 @@ Web-site for demonstration photo galleries by Dan Boyarchuk. Simple managing fro
 
 Frontend - HAML, SCSS, jquery, turbolinks, magnific-popup, jscrollpane
 
-Backend - ruby 2.2.1, rails 4.2.0, sqlite, active_admin, image magick, carrierwave
+Backend - ruby 2.3.0, rails 4.2.0, sqlite, active_admin, image magick, carrierwave
 
 ### Deploying
 
@@ -14,7 +14,7 @@ Backend - ruby 2.2.1, rails 4.2.0, sqlite, active_admin, image magick, carrierwa
 - Install [RVM](https://rvm.io/rvm/install)
 - Use RVM verion 2.2.1
 ```
-rvm install 2.2.1; rvm use 2.2.1 --default; ruby -v
+rvm install 2.3.0; rvm use 2.3.0 --default; ruby -v
 ```
 - Install gems and make DB migration in project directory
 ```

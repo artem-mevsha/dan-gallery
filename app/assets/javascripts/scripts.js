@@ -27,47 +27,35 @@ var ready = function() {
         $('.photo-container').height(photoHeight);
       } else {
         $('.photo-container').css('height', 'auto');
+        $photos.css('height', 'auto');
       }
     }
   };
 
-  var initScroll = function() {
-    var scrollPane = $('.photo-container').jScrollPane({
-      autoReinitialise: true,
+  var initSlick = function($container) {
+    $container.slick({
+      dots: true,
+      speed: 300,
+      arrows: false,
+      slidesToShow: 1,
+      centerMode: true,
+      lazyLoad: 'ondemand',
+      variableWidth: true
     });
-    var api = scrollPane.data('jsp');
-    $('#main').bind('mousewheel', function (event, delta, deltaX, deltaY) {
-        api.scrollByX(delta*-100);
-        return false;
-      }
-    );
   };
 
-  var resizeScroll = function() {
-    var element = $('.photo-container').jScrollPane();
-    var api = element.data('jsp');
-    api.destroy();
-    initScroll();
-  };
-
-  var destroyScroll = function() {
-    var element = $('.photo-container').jScrollPane();
-    var api = element.data('jsp');
-    api.destroy();
-  };
 
   if ($(window).width() > 768) {
     resizePhoto();
-    initScroll();
+    initSlick($('.photo-container'));
   }
 
   $(window).on('resize', function() {
+    resizePhoto();
     if ($(window).width() > 768) {
-      resizePhoto();
-      resizeScroll();
+      initSlick($('.photo-container'));
     } else {
-      destroyScroll();
-      $('#main').unbind('mousewheel');
+      $('.photo-container').slick('unslick');
     }
   });
 
@@ -103,4 +91,3 @@ var ready = function() {
 };
 
 $(document).ready(ready);
-$(document).on('page:load', ready);
