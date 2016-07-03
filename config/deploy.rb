@@ -5,6 +5,8 @@ set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0-p353'
 set :deploy_to, '/var/www/dan-gallery'
 
+set :default_environment, { 'PATH' => '/usr/local/rvm/bin:$PATH' }
+
 namespace :foreman do
   desc 'Start server'
   task :start do
